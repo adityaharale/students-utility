@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Utility</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{
+      background:#0f172a;
+      color:#fff;
+      font-family:Arial;
+      text-align:center;
+      padding:30px;
+    }
+    a{
+      display:block;
+      margin:15px auto;
+      padding:15px;
+      max-width:300px;
+      background:#38bdf8;
+      color:#000;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:bold;
+    }
+    footer{margin-top:40px;opacity:0.6;}
+  </style>
+</head>
+<body>
+
+<h1>🎓 Student Utility Website</h1>
+<p>All useful tools for students</p>
+
+<a href="percentage.html">Percentage Calculator</a>
+<a href="attendance.html">Attendance Calculator</a>
+<a href="wordcounter.html">Word Counter</a>
+<a href="countdown.html">Exam Countdown</a>
+<a href="streak.html">🔥 Study Streak Tracker</a>
+<footer>Created by <b>Aditya Harale</b></footer>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+</body>
+</html>

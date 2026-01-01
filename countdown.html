@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exam Countdown</title>
+<style>
+body{background:#020617;color:#fff;font-family:Arial;text-align:center;padding:30px;}
+input,button{padding:10px;margin:10px;border-radius:8px;border:none;}
+button{background:#38bdf8;font-weight:bold;}
+</style>
+</head>
+<body>
+
+<h2>Exam Countdown</h2>
+
+<input type="date" id="date"><br>
+<button onclick="start()">Start</button>
+
+<p id="res"></p>
+
+<footer>Created by Aditya Harale</footer>
+
+<script>
+function start(){
+ let d=new Date(date.value)-new Date();
+ let days=Math.floor(d/(1000*60*60*24));
+ res.innerText=days+" days remaining";
+}
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Study Streak Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+  background:#020617;
+  color:#fff;
+  font-family:Arial;
+  text-align:center;
+  padding:30px;
+}
+button{
+  padding:15px 25px;
+  border:none;
+  border-radius:10px;
+  background:#22c55e;
+  font-size:1rem;
+  font-weight:bold;
+  cursor:pointer;
+}
+.streak{
+  font-size:2rem;
+  margin:20px 0;
+}
+footer{opacity:0.6;margin-top:40px;}
+</style>
+</head>
+<body>
+
+<h2>🔥 Study Streak Tracker</h2>
+<p>Click once every day after study</p>
+
+<div class="streak" id="streak">0 Days</div>
+
+<button onclick="markDone()">Study Done Today</button>
+
+<footer>Created by Aditya Harale</footer>
+
+<script>
+<script>
+let streak = Number(localStorage.getItem("streak")) || 0;
+let lastDate = localStorage.getItem("lastDate");
+
+const streakDiv = document.getElementById("streak");
+
+function updateUI() {
+  streakDiv.innerText = streak + " Days";
+}
+updateUI();
+
+function markDone() {
+  let today = new Date().toDateString();
+
+  if (lastDate === today) {
+    alert("Aaj already study mark ho chuki hai 😄");
+    return;
+  }
+
+  // agar kal ya usse pehle ka hai
+  streak++;
+  localStorage.setItem("streak", streak);
+  localStorage.setItem("lastDate", today);
+
+  updateUI();
+}
+</script>
+</script>
+
+</body>
+</html>

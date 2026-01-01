@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Word Counter</title>
+<style>
+body{background:#020617;color:#fff;font-family:Arial;text-align:center;padding:30px;}
+textarea,button{width:90%;max-width:400px;padding:10px;margin:10px;border-radius:8px;}
+button{background:#38bdf8;font-weight:bold;}
+</style>
+</head>
+<body>
+
+<h2>Word Counter</h2>
+
+<textarea id="text" rows="6" placeholder="Paste your text here"></textarea><br>
+<button onclick="count()">Count Words</button>
+
+<p id="res"></p>
+
+<footer>Created by Aditya Harale</footer>
+
+<script>
+function count(){
+ let w=text.value.trim().split(/\s+/).filter(Boolean).length;
+ res.innerText="Words: "+w;
+}
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+</body>
+</html>
